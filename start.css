@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* viewport height */
+    height: 100vh; 
+    display: flex;
+    background: #FAEBD7;
+}
+
+.picture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50%;
+}

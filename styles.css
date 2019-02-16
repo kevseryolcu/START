@@ -36,8 +36,8 @@ body {
 }
 
 @keyframes inner-circle {
-    from { transform:rotate(0deg) translate(-150px) rotate(0deg); }
-    to { transform:rotate(360deg) translate(-150px) rotate(-360deg); }
+    from { transform:rotate(0deg) translate(-100px) rotate(0deg); }
+    to { transform:rotate(360deg) translate(-100px) rotate(-360deg); }
 }
 /* 
 .tabel {
