@@ -18,19 +18,18 @@ var triangleIndexActual = Math.floor(Math.random() * 4);
 var triangleIndex = Math.floor(Math.random() * 4);
 triangleImg.setAttribute("src", triangleImgs[triangleIndexActual]);
 function onClicktriangle() {
-  console.log("triangle clicked!", triangleIndex, triangleIndexActual);
-  if(triangleIndex == 3) {
-      triangleIndex = 0;
-  }
-  else {
-      triangleIndex++;
-  }
+    console.log("triangle clicked!", triangleIndex, triangleIndexActual);
+    if(triangleIndex == 3) {
+        triangleIndex = 0;
+    }
+    else {
+        triangleIndex++;
+    }
     triangleImg.setAttribute("src", triangleImgs[triangleIndex]);
 
     var audio= document.getElementById("audio");
     audio.playbackRate = 3;
     audio.play();
-  
 }
 
 // circle
@@ -68,8 +67,9 @@ function onClickCircle() {
 
 function onLoadCircle() {
     setTimeout(function(){ 
+        triangleImg.setAttribute("src", triangleImgs[triangleIndex]);
+        circleImg.setAttribute("src", circleImgs[circleIndex]);
         animation();
-        triangleIndex = Math.floor(Math.random() * 4);
     }, 3000);
 }
 
@@ -94,21 +94,20 @@ setInterval(function(){
     if(triangleIndex === triangleIndexActual && circleIndex === circleIndexActual) {      
         console.log("You win!");
         win = 1;
-        //kazandin ekrani
-        //next chapter button
+        location.href="win.html";
     }
     else {
         console.log("loser");
     }
 },5000)
 
-var count = 10, timer = setInterval(function() {
+var count = 30, timer = setInterval(function() {
     document.getElementById("counter").innerHTML = --count;
     if(count == 1) {
         clearInterval(timer);
-        console.log("hahahah");
         stopAnimation();
-        //katbettin
+        location.href="gameover.html";
+        
     }
 }, 1000);
 
