@@ -19,3 +19,13 @@ body {
     margin-bottom: auto;
     height: 50%;
 }
+#startLogo {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 30%;
+    padding-bottom:10%;
+    margin-left: 10%;
+    margin-right:10%;
+    margin-top: 40%;
+    margin-bottom: 40%;
+}
