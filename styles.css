@@ -8,7 +8,7 @@ body {
     /* viewport height */
     height: 100vh; 
     display: flex;
-    background: 	#F5F5F5;
+    background: 	rgb(250, 235, 215);;
 }
 .board {
     width: calc(50% - 10px);
@@ -39,7 +39,7 @@ body {
 .backToStart {
     z-index: 3;
     object-fit: contain;
-    width: calc(10% - 10px);
+    width: calc(5% - 10px);
     height: calc(5% - 10px);
     margin: 5px;
     position: relative;
@@ -63,6 +63,14 @@ body {
 @keyframes circle {
     from { transform:rotate(0deg) translate(150px) rotate(0deg); }
     to { transform:rotate(-360deg) translate(150px) rotate(360deg); }
+}
+#counter {
+    text-align: center;
+    font-size: 180%;
+    margin-left: 0%;
+    margin-top: 10px;
+    width: calc(5% - 10px);
+    height: calc(5% - 10px);
 }
 /* 
 .tabel {

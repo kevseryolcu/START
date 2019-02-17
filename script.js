@@ -1,4 +1,5 @@
 var mainboard = document.getElementById("mainboard");
+var win = 0;
 //  triangle
 var triangle = document.createElement("div");
 triangle.className = "triangle";
@@ -67,6 +68,11 @@ function animation() {
     circle.style.animation = "circle 5s linear infinite";
 }
 
+function stopAnimation() {
+    circle.style.animation = "";
+    triangle.style.animation = "";
+}
+
 // common
 setInterval(function(){
     if(triangleIndex === triangleIndexActual){
@@ -77,12 +83,24 @@ setInterval(function(){
     }
     if(triangleIndex === triangleIndexActual && circleIndex === circleIndexActual) {      
         console.log("You win!");
+        win = 1;
+        //kazandin ekrani
         //next chapter button
     }
     else {
         console.log("loser");
     }
 },5000)
+
+var count = 10, timer = setInterval(function() {
+    document.getElementById("counter").innerHTML = --count;
+    if(count == 1) {
+        clearInterval(timer);
+        console.log("hahahah");
+        stopAnimation();
+        //katbettin
+    }
+}, 1000);
 
 
 sound("./sounds/onclick.mp3", triangle, "onclickAudioTriangle");

@@ -8,7 +8,7 @@ body {
     /* viewport height */
     height: 100vh; 
     display: flex;
-    background: white;
+    background: rgb(250, 235, 215);
 }
 
 .picture{
