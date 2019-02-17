@@ -17,7 +17,7 @@ var triangleIndexActual = Math.floor(Math.random() * 4);
 var triangleIndex = Math.floor(Math.random() * 4);
 triangleImg.setAttribute("src", triangleImgs[triangleIndexActual]);
 function onClicktriangle() {
-  console.log("triangle clicked!");
+  console.log("triangle clicked!", triangleIndex, triangleIndexActual);
   if(triangleIndex == 3) {
       triangleIndex = 0;
   }
@@ -38,27 +38,28 @@ circleImg.setAttribute("id", "circleImgs");
 circle.appendChild(circleImg);
 // circle.style.animation = "circle 5s linear infinite";
 circle.style.marginLeft = '500px';
-circle.addEventListener("click", onClickcircle);
+circle.addEventListener("click", onClickCircle);
 window.addEventListener("load", onLoadCircle);
 
 var circleIndexActual = Math.floor(Math.random() * 2);
 var circleIndex = circleIndexActual ? 0 : 1;
 circleImg.setAttribute("src", circleImgs[circleIndexActual]);
-function onClickcircle() {
-  console.log("circle clicked!");
-  if(circleIndex == 1) {
-      circleIndex = 0;
-  }
-  else {
-      circleIndex++;
-  }
+
+function onClickCircle() {
+    console.log("circle clicked! ", circleIndex, circleIndexActual);
+    if(circleIndex == 1) {
+        circleIndex = 0;
+    }
+    else {
+        circleIndex++;
+    }
     circleImg.setAttribute("src", circleImgs[circleIndex]);
 }
 
 function onLoadCircle() {
     setTimeout(function(){ 
         animation();
-    },5000);
+    }, 3000);
 }
 
 function animation() {
@@ -74,13 +75,30 @@ setInterval(function(){
     if(circleIndex === circleIndexActual){
         circle.style.animation = "";
     }
-
     if(triangleIndex === triangleIndexActual && circleIndex === circleIndexActual) {      
         console.log("You win!");
         //next chapter button
     }
-    
     else {
         console.log("loser");
     }
 },5000)
+
+
+sound("./sounds/chapter1.mpeg");
+function sound(src) {
+    console.log("sound");
+    var sound = document.createElement("audio");
+    sound.src = src;
+    sound.type="audio/mpeg"
+    sound.setAttribute("preload", "auto");
+    sound.setAttribute("controls", "none");
+    sound.style.display = "none";
+    mainboard.appendChild(sound);
+    // this.play = function(){
+    //     this.sound.play();
+    // }
+    // this.stop = function(){
+    //     this.sound.pause();
+    // }    
+}
