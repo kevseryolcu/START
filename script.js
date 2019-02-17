@@ -26,6 +26,11 @@ function onClicktriangle() {
       triangleIndex++;
   }
     triangleImg.setAttribute("src", triangleImgs[triangleIndex]);
+
+    var audio= document.getElementById("audio");
+    audio.playbackRate = 3;
+    audio.play();
+  
 }
 
 // circle
@@ -55,11 +60,16 @@ function onClickCircle() {
         circleIndex++;
     }
     circleImg.setAttribute("src", circleImgs[circleIndex]);
+
+    var audio= document.getElementById("audio");
+    audio.playbackRate = 3;
+    audio.play();
 }
 
 function onLoadCircle() {
     setTimeout(function(){ 
         animation();
+        triangleIndex = Math.floor(Math.random() * 4);
     }, 3000);
 }
 
@@ -103,37 +113,37 @@ var count = 10, timer = setInterval(function() {
 }, 1000);
 
 
-sound("./sounds/onclick.mp3", triangle, "onclickAudioTriangle");
-sound("./sounds/onclick.mp3", circle, "onclickAudioCircle");
+// sound("./sounds/onclick.mp3", triangle, "onclickAudioTriangle");
+// sound("./sounds/onclick.mp3", circle, "onclickAudioCircle");
 
-function sound(src, parent, id) {
-    console.log("sound");
-    var sound = document.createElement("audio");
-    sound.src = src;
-    sound.playbackRate = 3;
-    sound.type="audio/mp3"
-    sound.setAttribute("id", id);
-    sound.setAttribute("preload", "auto");
-    sound.setAttribute("controls", "none");
-    sound.muted = "muted";
-    sound.style.display = "none";
-    if(id === "onclickAudioTriangle") {
-        sound.addEventListener("click", playAudioTriangle);
-    }
-    else {
-        sound.addEventListener("click", playAudioCircle);
-    }
-    parent.appendChild(sound);
-}
+// function sound(src, parent, id) {
+//     console.log("sound");
+//     var sound = document.createElement("audio");
+//     sound.src = src;
+//     sound.playbackRate = 3;
+//     sound.type="audio/mp3"
+//     sound.setAttribute("id", id);
+//     sound.setAttribute("preload", "auto");
+//     sound.setAttribute("controls", "none");
+//     sound.muted = "muted";
+//     sound.style.display = "none";
+//     if(id === "onclickAudioTriangle") {
+//         sound.addEventListener("click", playAudioTriangle);
+//     }
+//     else {
+//         sound.addEventListener("click", playAudioCircle);
+//     }
+//     parent.appendChild(sound);
+// }
 
     
-function playAudioTriangle() { 
-    var onclickAudio = document.getElementById("onclickAudioTriangle");
-    onclickAudio.play(); 
-} 
+// function playAudioTriangle() { 
+//     var onclickAudio = document.getElementById("onclickAudioTriangle");
+//     onclickAudio.play(); 
+// } 
     
     
-function playAudioCircle() { 
-    var onclickAudio = document.getElementById("onclickAudioCircle");
-    onclickAudio.play(); 
-} 
+// function playAudioCircle() { 
+//     var onclickAudio = document.getElementById("onclickAudioCircle");
+//     onclickAudio.play(); 
+// } 

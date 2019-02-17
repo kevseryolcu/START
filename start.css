@@ -9,23 +9,29 @@ body {
     height: 100vh; 
     display: flex;
     background: rgb(250, 235, 215);
+    /* background: url(./img/startchapters_.png);
+    background-size: 2076px 1600px; */
 }
 
 .picture{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 50%;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+}
+.startchapters {
+    /* margin-left: 50%;
+    margin-top: 50%; */
 }
 #startLogo {
     /* padding-left: 10%;
     padding-right: 10%;
     padding-top: 30%;
-    padding-bottom:10%;
-    margin-left: 10%;
-    margin-right:10%;
-    margin-top: 40%;
+    padding-bottom:10%; */
+    margin-left: 23%;
+    margin-top: 3%;
+    /* margin-right:10%;
     margin-bottom: 40%; */
 }
