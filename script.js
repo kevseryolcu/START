@@ -85,20 +85,37 @@ setInterval(function(){
 },5000)
 
 
-sound("./sounds/chapter1.mpeg");
-function sound(src) {
+sound("./sounds/onclick.mp3", triangle, "onclickAudioTriangle");
+sound("./sounds/onclick.mp3", circle, "onclickAudioCircle");
+
+function sound(src, parent, id) {
     console.log("sound");
     var sound = document.createElement("audio");
     sound.src = src;
-    sound.type="audio/mpeg"
+    sound.playbackRate = 3;
+    sound.type="audio/mp3"
+    sound.setAttribute("id", id);
     sound.setAttribute("preload", "auto");
     sound.setAttribute("controls", "none");
+    sound.muted = "muted";
     sound.style.display = "none";
-    mainboard.appendChild(sound);
-    // this.play = function(){
-    //     this.sound.play();
-    // }
-    // this.stop = function(){
-    //     this.sound.pause();
-    // }    
+    if(id === "onclickAudioTriangle") {
+        sound.addEventListener("click", playAudioTriangle);
+    }
+    else {
+        sound.addEventListener("click", playAudioCircle);
+    }
+    parent.appendChild(sound);
 }
+
+    
+function playAudioTriangle() { 
+    var onclickAudio = document.getElementById("onclickAudioTriangle");
+    onclickAudio.play(); 
+} 
+    
+    
+function playAudioCircle() { 
+    var onclickAudio = document.getElementById("onclickAudioCircle");
+    onclickAudio.play(); 
+} 

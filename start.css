@@ -8,7 +8,7 @@ body {
     /* viewport height */
     height: 100vh; 
     display: flex;
-    background: #FAEBD7;
+    background: white;
 }
 
 .picture{
@@ -20,12 +20,12 @@ body {
     height: 50%;
 }
 #startLogo {
-    padding-left: 10%;
+    /* padding-left: 10%;
     padding-right: 10%;
     padding-top: 30%;
     padding-bottom:10%;
     margin-left: 10%;
     margin-right:10%;
     margin-top: 40%;
-    margin-bottom: 40%;
+    margin-bottom: 40%; */
 }

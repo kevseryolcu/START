@@ -8,7 +8,7 @@ body {
     /* viewport height */
     height: 100vh; 
     display: flex;
-    background: #FAEBD7;
+    background: 	#F5F5F5;
 }
 .board {
     width: calc(50% - 10px);
@@ -37,9 +37,19 @@ body {
 }
 
 .backToStart {
+    z-index: 3;
     object-fit: contain;
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
+    width: calc(10% - 10px);
+    height: calc(5% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+}
+
+.backToStartImg {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
     margin: 5px;
     position: relative;
     transform: scale(1);
