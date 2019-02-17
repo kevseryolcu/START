@@ -23,16 +23,27 @@ body {
     /* animation: circle 5s linear infinite; */
     transform-origin:50% 200px;
 }
-.square {
+.triangle {
+    z-index: 2;
+    max-width: 10%;
+    max-height: 10%;
+    /* animation: circle 10s linear infinite; */
+}
+.circle {
     z-index: 1;
     max-width: 10%;
     max-height: 10%;
     /* animation: circle 10s linear infinite; */
 }
 
-@keyframes circle {
+@keyframes triangle {
     from { transform:rotate(0deg) translate(150px) rotate(0deg); }
     to { transform:rotate(360deg) translate(150px) rotate(-360deg); }
+}
+
+@keyframes circle {
+    from { transform:rotate(0deg) translate(150px) rotate(0deg); }
+    to { transform:rotate(-360deg) translate(150px) rotate(360deg); }
 }
 /* 
 .tabel {
