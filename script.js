@@ -37,7 +37,7 @@ var circle = document.createElement("div");
 circle.className = "circle";
 mainboard.appendChild(circle);       
 
-var circleImgs = ["./img/circle13.png", "./img/circle2.png"]
+var circleImgs = ["./img/circle13.png", "./img/circle2.png", "./img/shapesmall2.png"]
 var circleImg = document.createElement("img");
 circleImg.setAttribute("id", "circleImgs");
 circle.appendChild(circleImg);
@@ -46,13 +46,13 @@ circle.style.marginLeft = '500px';
 circle.addEventListener("click", onClickCircle);
 window.addEventListener("load", onLoadCircle);
 
-var circleIndexActual = Math.floor(Math.random() * 2);
-var circleIndex = circleIndexActual ? 0 : 1;
+var circleIndexActual = Math.floor(Math.random() * 3);
+var circleIndex = Math.floor(Math.random() * 3);
 circleImg.setAttribute("src", circleImgs[circleIndexActual]);
 
 function onClickCircle() {
     console.log("circle clicked! ", circleIndex, circleIndexActual);
-    if(circleIndex == 1) {
+    if(circleIndex == 2) {
         circleIndex = 0;
     }
     else {
@@ -110,39 +110,3 @@ var count = 30, timer = setInterval(function() {
         
     }
 }, 1000);
-
-
-// sound("./sounds/onclick.mp3", triangle, "onclickAudioTriangle");
-// sound("./sounds/onclick.mp3", circle, "onclickAudioCircle");
-
-// function sound(src, parent, id) {
-//     console.log("sound");
-//     var sound = document.createElement("audio");
-//     sound.src = src;
-//     sound.playbackRate = 3;
-//     sound.type="audio/mp3"
-//     sound.setAttribute("id", id);
-//     sound.setAttribute("preload", "auto");
-//     sound.setAttribute("controls", "none");
-//     sound.muted = "muted";
-//     sound.style.display = "none";
-//     if(id === "onclickAudioTriangle") {
-//         sound.addEventListener("click", playAudioTriangle);
-//     }
-//     else {
-//         sound.addEventListener("click", playAudioCircle);
-//     }
-//     parent.appendChild(sound);
-// }
-
-    
-// function playAudioTriangle() { 
-//     var onclickAudio = document.getElementById("onclickAudioTriangle");
-//     onclickAudio.play(); 
-// } 
-    
-    
-// function playAudioCircle() { 
-//     var onclickAudio = document.getElementById("onclickAudioCircle");
-//     onclickAudio.play(); 
-// } 
